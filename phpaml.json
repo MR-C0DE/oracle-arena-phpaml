@@ -29,7 +29,7 @@
         "site_name": "Oracle Arena",
         "title": "Oracle Arena — a PHPAML reactive game",
         "description": "Challenge the Oracle in a five-round reactive game built entirely with PHPAML.",
-        "base_url": "http://127.0.0.1:8910",
+        "base_url": "https://arena.phpaml.com",
         "locale": "fr_CA",
         "robots": "index,follow",
         "image": "",
@@ -38,7 +38,9 @@
         "author": "",
         "theme_color": "#11120f",
         "allow": [
-            "/"
+            "/",
+            "/game",
+            "/leaderboard"
         ],
         "disallow": []
     },
