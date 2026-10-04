@@ -7,3 +7,4 @@
 !/runtime/database/migrations/*.php
 /runtime/database/migrations/.aml-data-migrations.lock
 .DS_Store
+/output/
