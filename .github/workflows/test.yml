@@ -1,0 +1,52 @@
+name: Test template
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: PHP ${{ matrix.php }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14, windows-2022]
+        php: ['8.2', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: pdo, pdo_sqlite
+          tools: composer
+      - name: Select the declared framework version
+        id: framework
+        shell: bash
+        run: |
+          version="$(php -r '$m=json_decode(file_get_contents("phpaml.json"), true, 512, JSON_THROW_ON_ERROR); echo $m["runtime"]["framework"];')"
+          test -n "$version"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          repository: MR-C0DE/phpaml-framework
+          ref: v${{ steps.framework.outputs.version }}
+          path: .framework-source
+      - run: composer validate --strict
+      - name: Install framework source layout
+        shell: bash
+        run: mkdir -p runtime/framework && cp -R .framework-source/src/. runtime/framework/
+      - name: Verify installed framework matches its source
+        shell: bash
+        run: diff -qr .framework-source/src runtime/framework
+      - run: composer install --no-interaction --prefer-dist
+      - name: Lint application sources
+        shell: bash
+        run: find src tests -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Run application tests
+        run: php tests/run.php
+      - name: Reject HTTP path traversal
+        run: composer test:http-security
+      - name: Run PHPStan
+        run: ./runtime/bin/phpstan analyse --no-progress

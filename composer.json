@@ -1,0 +1,41 @@
+{
+    "name": "phpaml/phpaml",
+    "description": "Official starter for structured PHPAML web applications",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "ext-pdo": "*",
+        "phpaml/data": "^0.2@alpha",
+        "phpaml/engine": "^0.1@beta",
+        "phpaml/view": "^0.1.0-beta.6"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPAML\\": "runtime/framework/",
+            "App\\Controllers\\": "src/controllers/",
+            "App\\Models\\": "src/models/",
+            "App\\Middleware\\": "src/middleware/",
+            "App\\Services\\": "src/services/",
+            "App\\Routes\\": "src/routes/",
+            "App\\": "src/",
+            "App\\Views\\": "src/views/",
+            "App\\Views\\Pages\\": "src/views/pages/",
+            "App\\Views\\Components\\": "src/views/components/",
+            "App\\Views\\Layouts\\": "src/views/layouts/",
+            "App\\Views\\States\\": "src/views/states/"
+        }
+    },
+    "config": {
+        "vendor-dir": "runtime",
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "php tests/run.php",
+        "test:http-security": "php tests/http-security.php",
+        "analyse": "phpstan analyse"
+    }
+}

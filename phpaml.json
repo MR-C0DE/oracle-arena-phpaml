@@ -1,0 +1,89 @@
+{
+    "name": "oraclearena",
+    "version": "0.5.0-beta.8",
+    "description": "A reactive rock-paper-scissors game demonstrating PHPAML View, API and Data.",
+    "application": {
+        "type": "view",
+        "views": "src/views",
+        "debug": false,
+        "error_views": "src/views/errors",
+        "session": {
+            "lifetime": 7200,
+            "same_site": "Lax"
+        },
+        "rate_limit": {
+            "enabled": true,
+            "limit": 60,
+            "window": 60
+        },
+        "middlewares": [
+            "PHPAML\\Middleware\\SecurityHeadersMiddleware"
+        ]
+    },
+    "database": {
+        "dsn": "sqlite:runtime/storage/database.sqlite",
+        "username": "root",
+        "password": ""
+    },
+    "seo": {
+        "site_name": "Oracle Arena",
+        "title": "Oracle Arena — a PHPAML reactive game",
+        "description": "Challenge the Oracle in a five-round reactive game built entirely with PHPAML.",
+        "base_url": "http://127.0.0.1:8910",
+        "locale": "fr_CA",
+        "robots": "index,follow",
+        "image": "",
+        "twitter_card": "summary_large_image",
+        "type": "WebSite",
+        "author": "",
+        "theme_color": "#11120f",
+        "allow": [
+            "/"
+        ],
+        "disallow": []
+    },
+    "runtime": {
+        "directory": "runtime",
+        "framework": "0.3.0-beta.6"
+    },
+    "scripts": {
+        "start": "aml serve",
+        "test": "aml test"
+    },
+    "requirements": {
+        "php": "^8.2"
+    },
+    "modules": {
+        "view": {
+            "package": "phpaml/view",
+            "constraint": "^0.1.0-beta.6",
+            "mode": "frontend"
+        },
+        "engine": {
+            "package": "phpaml/engine",
+            "mode": "client"
+        },
+        "data": {
+            "version": "0.2.0-alpha.1",
+            "driver": "sqlite"
+        }
+    },
+    "data": {
+        "default": "main",
+        "connections": {
+            "main": {
+                "driver": "sqlite",
+                "dsn": null,
+                "database": "runtime/storage/app.sqlite",
+                "host": "127.0.0.1",
+                "port": null,
+                "username": null,
+                "password": null,
+                "uri": null
+            }
+        },
+        "migrations_path": "runtime/database/migrations",
+        "models_path": "src/models",
+        "seeders": []
+    }
+}

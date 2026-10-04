@@ -1,0 +1,9 @@
+.env
+/vendor/
+/runtime/*
+!/runtime/database/
+/runtime/database/*
+!/runtime/database/migrations/
+!/runtime/database/migrations/*.php
+/runtime/database/migrations/.aml-data-migrations.lock
+.DS_Store

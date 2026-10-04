@@ -1,0 +1,235 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "69106a348f8e97820b4ea9c64f76263d",
+    "packages": [
+        {
+            "name": "phpaml/data",
+            "version": "v0.2.0-alpha.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MR-C0DE/phpaml-data.git",
+                "reference": "41eb42c36aed32baed4933b4c8a6d2a92833680c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MR-C0DE/phpaml-data/zipball/41eb42c36aed32baed4933b4c8a6d2a92833680c",
+                "reference": "41eb42c36aed32baed4933b4c8a6d2a92833680c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "phpaml": {
+                    "type": "data-library",
+                    "version": "0.2.0-alpha.1"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AML\\Data\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Typed data access for PHPAML, AML View and standalone PHP applications.",
+            "homepage": "https://phpaml.com",
+            "keywords": [
+                "database",
+                "mysql",
+                "orm",
+                "phpaml",
+                "postgresql",
+                "sqlite"
+            ],
+            "support": {
+                "issues": "https://github.com/MR-C0DE/phpaml-data/issues",
+                "source": "https://github.com/MR-C0DE/phpaml-data"
+            },
+            "time": "2026-08-21T06:49:43+00:00"
+        },
+        {
+            "name": "phpaml/engine",
+            "version": "v0.1.0-beta.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MR-C0DE/phpaml-engine.git",
+                "reference": "1d4eb19434af121905495c582e72c7df03356ab6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MR-C0DE/phpaml-engine/zipball/1d4eb19434af121905495c582e72c7df03356ab6",
+                "reference": "1d4eb19434af121905495c582e72c7df03356ab6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "phpaml": {
+                    "type": "frontend-engine",
+                    "version": "0.1.0-beta.4"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AML\\Engine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Client-side state, actions and rendering engine for AML View.",
+            "support": {
+                "issues": "https://github.com/MR-C0DE/phpaml-engine/issues",
+                "source": "https://github.com/MR-C0DE/phpaml-engine/tree/v0.1.0-beta.4"
+            },
+            "time": "2026-09-26T22:32:01+00:00"
+        },
+        {
+            "name": "phpaml/view",
+            "version": "v0.1.0-beta.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MR-C0DE/phpaml-view.git",
+                "reference": "e1d3373125a8698645408db4aa15a770c423bd18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MR-C0DE/phpaml-view/zipball/e1d3373125a8698645408db4aa15a770c423bd18",
+                "reference": "e1d3373125a8698645408db4aa15a770c423bd18",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2",
+                "phpaml/engine": "^0.1.0-beta.4"
+            },
+            "type": "library",
+            "extra": {
+                "phpaml": {
+                    "type": "view-library",
+                    "version": "0.1.0-beta.6"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "AML\\View\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Declarative frontend interfaces for PHPAML, authored in PHP.",
+            "homepage": "https://phpaml.com",
+            "keywords": [
+                "declarative-ui",
+                "frontend",
+                "mvc",
+                "phpaml"
+            ],
+            "support": {
+                "issues": "https://github.com/MR-C0DE/phpaml-view/issues",
+                "source": "https://github.com/MR-C0DE/phpaml-view"
+            },
+            "time": "2026-09-26T22:32:45+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "phpstan/phpstan",
+            "version": "2.2.8",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e285254e60f33c21902efef4a926ca0987c06804",
+                "reference": "e285254e60f33c21902efef4a926ca0987c06804",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ondřej Mirtes"
+                },
+                {
+                    "name": "Markus Staab"
+                },
+                {
+                    "name": "Vincent Langlet"
+                }
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-08-04T22:21:45+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "phpaml/data": 15,
+        "phpaml/engine": 10,
+        "phpaml/view": 10
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.2",
+        "ext-pdo": "*"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
+}

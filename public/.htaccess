@@ -1,0 +1,18 @@
+Options -Indexes
+RewriteEngine On
+
+# Ne jamais exposer le front controller dans l'URL publique.
+RewriteCond %{THE_REQUEST} \s/+index\.php(?:[/?\s]) [NC]
+RewriteRule ^index\.php(?:/(.*))?$ /$1 [R=301,L,NE]
+
+# Refuser les fichiers cachés et les formats internes même s'ils sont copiés ici par erreur.
+RewriteRule (^|/)\. - [F,L]
+<FilesMatch "(?i)\.(env|ini|log|lock|sqlite|sqlite3|sql|phar|zip|tar|gz|bak|dist|yml|yaml)$">
+    Require all denied
+</FilesMatch>
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.php [QSA,L]
